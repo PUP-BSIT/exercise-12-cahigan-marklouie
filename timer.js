@@ -20,11 +20,12 @@ document.getElementById("stop_btn").addEventListener("click", () => {
 
 function startCounter() {
 	clearInterval(timerInterval);
+	timerInterval = setInterval(updateCounter, 1000);
+}
 
-	timerInterval = setInterval(() => {
-		countValue++;
-		countElement.textContent = countValue;
-	}, 1000);
+function updateCounter() {
+    countValue++;
+    countElement.textContent = countValue;
 }
 
 function pauseCounter() {
